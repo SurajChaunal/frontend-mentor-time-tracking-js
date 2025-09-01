@@ -185,7 +185,6 @@ body {
     gap: 0.6rem;
   }
   .prev-time {
-    color: var(--color-Purple-500);
     font-size: 1.2rem;
   }
 }
@@ -217,5 +216,8 @@ body {
   }
   .total-time {
     font-size: 4rem;
+  }
+  .prev-time {
+    font-size: 1.4rem;
   }
 }

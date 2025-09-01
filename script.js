@@ -34,7 +34,7 @@ function displayUI(range) {
     );
     if (!sectionEl) return;
     const labelObj = {
-      daily: "Last Day",
+      daily: "Yesterday",
       weekly: "Last Week",
       monthly: "Last Month",
     };
