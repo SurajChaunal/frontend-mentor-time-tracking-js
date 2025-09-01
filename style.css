@@ -149,7 +149,7 @@ body {
 
 @media (min-width: 600px) {
   .container {
-    max-width: 60rem;
+    max-width: min(90%, 50rem);
     grid-template-columns: repeat(3, 1fr);
   }
   .user-section {

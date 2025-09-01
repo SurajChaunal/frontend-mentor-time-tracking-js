@@ -6,11 +6,11 @@ async function fetchData() {
   try {
     const res = await fetch(`./data.json`);
     data = await res.json();
+    displayUI(`daily`);
   } catch (err) {
     console.error(err);
     return;
   }
-  displayUI(`daily`);
 }
 (async function () {
   fetchData();
@@ -20,13 +20,12 @@ function toggleButton(targetBtn) {
   targetBtn.classList.add("active");
 }
 
-actionBtn.forEach((btn) => {
-  actionContainer.addEventListener("click", (e) => {
-    if (!e.target.classList.contains("btn-action")) return;
-    toggleButton(e.target);
-    displayUI(e.target.textContent.toLowerCase());
-  });
+actionContainer.addEventListener("click", (e) => {
+  if (!e.target.classList.contains("btn-action")) return;
+  toggleButton(e.target);
+  displayUI(e.target.dataset.range);
 });
+
 function displayUI(range) {
   data.forEach((item) => {
     const sectionEl = document.querySelector(
