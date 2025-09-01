@@ -1,4 +1,6 @@
+const actionContainer = document.querySelector(".user-action");
 const actionBtn = document.querySelectorAll(".btn-action");
+
 let data;
 async function fetchData() {
   try {
@@ -13,9 +15,17 @@ async function fetchData() {
 (async function () {
   fetchData();
 })();
+function toggleButton(targetBtn) {
+  actionBtn.forEach((btn) => btn.classList.remove("active"));
+  targetBtn.classList.add("active");
+}
 
 actionBtn.forEach((btn) => {
-  btn.addEventListener("click", () => displayUI(btn.textContent.toLowerCase()));
+  actionContainer.addEventListener("click", (e) => {
+    if (!e.target.classList.contains("btn-action")) return;
+    toggleButton(e.target);
+    displayUI(e.target.textContent.toLowerCase());
+  });
 });
 function displayUI(range) {
   data.forEach((item) => {
