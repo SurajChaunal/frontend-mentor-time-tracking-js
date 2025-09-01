@@ -37,10 +37,15 @@ function displayUI(range) {
       weekly: "Last Week",
       monthly: "Last Month",
     };
+    // sectionEl.querySelector(".total-time").textContent =
+    //   item.timeframes[range][`current`] + `hrs`;
+    // sectionEl.querySelector(".label-time").textContent =
+    //   item.timeframes[range][`previous`] + `hrs`;
     sectionEl.querySelector(".total-time").textContent =
-      item.timeframes[range][`current`] + `hrs`;
+      (item.timeframes?.[range]?.current ?? 0) + `hrs`; // safely access or default to 0
     sectionEl.querySelector(".label-time").textContent =
-      item.timeframes[range][`previous`] + `hrs`;
+      (item.timeframes?.[range]?.previous ?? 0) + `hrs`; // safely access or default to 0
+
     sectionEl.querySelector(
       ".label-action"
     ).textContent = `${labelObj[range]} -`;
