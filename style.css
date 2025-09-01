@@ -32,7 +32,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .container {
@@ -204,7 +204,6 @@ body {
     align-items: flex-start;
     margin-bottom: 1rem;
   }
-
   .user-photo {
     width: 40%;
   }
@@ -215,7 +214,7 @@ body {
     justify-items: center;
   }
   .total-time {
-    font-size: 4rem;
+    font-size: 4.8rem;
   }
   .prev-time {
     font-size: 1.4rem;
